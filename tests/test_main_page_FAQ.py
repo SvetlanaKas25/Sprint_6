@@ -8,7 +8,7 @@ from pages.main_page import MainPage
 class TestMainPage:
 
     @allure.title("Проверка ответов на вопросы")
-    @allure.description("Проверяем, что при нажиматии на вопрос, открывается соответствующий текст ответа.")
+    @allure.description("Проверяем, что при нажатии на вопрос, открывается соответствующий текст ответа.")
     @pytest.mark.parametrize("index", range(len(QuestionText.QUESTIONS)))
     def test_questions_and_answers(self, driver, index):
         main_page = MainPage(driver)
