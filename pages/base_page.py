@@ -69,3 +69,7 @@ class BasePage:
     @allure.step('Ожидаем пока текущий URL вкладки перестанет быть равным about:blank')
     def wait_url_until_not_about_blank(self, time=10):
         return WebDriverWait(self.driver, time).until_not(EC.url_to_be('about:blank'))
+    
+    @allure.step('Определяем текущее количество открытых вкладок.')
+    def get_current_tab_count(self):
+        return len(self.driver.window_handles)

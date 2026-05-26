@@ -15,7 +15,7 @@ class HeaderMenuComponent(BasePage):
     @allure.step("Переход по логотипу Яндекса")
     def click_yandex_logo(self):
         self.accept_cookies()
-        initial_tabs = len(self.driver.window_handles)
+        initial_tabs = self.get_current_tab_count()
         self.click_element(BasePageLocators.LOGO_YANDEX)
         self.wait_for_new_tab(initial_tabs)
         self.switch_window(1) 
