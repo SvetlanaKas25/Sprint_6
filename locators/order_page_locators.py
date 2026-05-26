@@ -2,6 +2,13 @@ from selenium.webdriver.common.by import By
 
 class OrderPageLocators:
 
+    # Кнопка Заказать вверху главной страницы
+    ORDER_BUTTON_HEADER = (By.XPATH, ".//div[@class='Header_Nav__AGCXC']/button[@class='Button_Button__ra12g']")
+
+    # Кнопка Заказать внизу главной страницы
+    ORDER_BUTTON_MIDDLE = (By.XPATH, "//div[@class='Home_FinishButton__1_cWm']/button[contains(text(), 'Заказать')]")
+
+    
     # Форма Для кого самокат
     # Поле Имя
     NAME_FIELD = (By.XPATH, "//input[contains(@placeholder, 'Имя')]")
