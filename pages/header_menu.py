@@ -6,13 +6,13 @@ from data import URLs
 
 class HeaderMenuComponent(BasePage):
     
-    #'Клик по логотипу Самоката'
+    @allure.step("Клик по логотипу Самоката")
     def click_logo_scooter(self):
         self.accept_cookies()
         self.click_element(BasePageLocators.LOGO_SCOOTER)
         return self
 
-    #'Переход по логотипу Яндекса'
+    @allure.step("Переход по логотипу Яндекса")
     def click_yandex_logo(self):
         self.accept_cookies()
         initial_tabs = len(self.driver.window_handles)
