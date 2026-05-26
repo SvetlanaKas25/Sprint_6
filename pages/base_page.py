@@ -1,4 +1,5 @@
 import allure
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -73,3 +74,9 @@ class BasePage:
     @allure.step('Определяем текущее количество открытых вкладок.')
     def get_current_tab_count(self):
         return len(self.driver.window_handles)
+    
+    @allure.step('Клик вне заданной области')
+    def click_by_offset(self):
+        actions = ActionChains(self.driver)
+        actions.move_by_offset(10, 10).click().perform()
+    

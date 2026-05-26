@@ -1,5 +1,4 @@
 import allure
-from selenium.webdriver.common.action_chains import ActionChains
 
 from pages.base_page import BasePage
 from locators.base_page_locators import BasePageLocators
@@ -36,8 +35,7 @@ class OrderPage(BasePage):
     
     @allure.step("Клик вне области попапа Календарь")
     def click_outside_calendar(self):
-        actions = ActionChains(self.driver)
-        actions.move_by_offset(10, 10).click().perform()
+        self.click_by_offset()
 
     @allure.step("Кликаем на Заказать в Форме заказа")
     def click_make_order_button(self):
